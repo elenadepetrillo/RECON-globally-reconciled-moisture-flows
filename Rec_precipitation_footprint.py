@@ -16,7 +16,7 @@ import geopandas as gpd
 from shapely.geometry import box
 
 # Input Configuration - Change paths according to your directory structure
-input_file = "/RECON_0.5_moisture_flow.nc"
+input_file = "/RECON_moisture_flows_0.5.nc"
 
 # Constants for calculation
 ymax = 122079329.40990189  # Maximum moisture flow value

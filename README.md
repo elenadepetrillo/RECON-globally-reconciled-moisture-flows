@@ -1,7 +1,7 @@
 #Created by Elena De Petrillo (elena.depetrillo@polito.it) & Luca Monaco (luca.monaco@polito.it). November 2024
 
 
-To handle the database RECON_moisture_flows_0.5.nc available at () users can use a Python environment with the required packages described in the following sample scripts. 
+To handle the database RECON_moisture_flows_0.5.nc available at () users can use a Python environment with the required packages described in the attached sample scripts. 
 An in-depth data-processing workflow through Python code is available in the sample codes. 
 
 Codes:

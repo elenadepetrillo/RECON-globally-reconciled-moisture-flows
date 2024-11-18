@@ -1,4 +1,4 @@
-# Script to retrieve and plot the reconciled moisture flow of evaporation to precipiation from source to target based on NetCDF moisture flow data (Recon_Diati).  
+# Script to retrieve and plot the reconciled moisture flow of evaporation to precipiation from source to target based on NetCDF moisture flow data (RECON).  
 Created by Elena De Petrillo (elena.depetrillo@polito.it) & Luca Monaco (luca.monaco@polito.it), 11 November 2024
 
 # Required Libraries
@@ -13,7 +13,7 @@ import geopandas as gpd
 from shapely.geometry import box
 
 # Input Configuration - Change paths according to your directory structure
-input_file = "/DiatiTrack_0.5_AVERAGE_final.nc"
+input_file = "/RECON_0.5_moisture_flow.nc"
 
 # Constants for calculation
 ymax = 122079329.40990189  # Maximum moisture flow value

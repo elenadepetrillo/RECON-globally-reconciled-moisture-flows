@@ -22,17 +22,15 @@ The **RECON dataset** provides moisture flow volumes, in cubic meters, from evap
 
 - **Data Format**: Moisture flow volumes in the dataset are stored as integers `[0, 255]` and must be converted to cubic meters.  The data conversion formula
     
-    $
-    y = 10^{\frac{z-1}{254}\cdot[log_{10}(y_{max})-log_{10}(y_{min})]+log_{10}(y_{min})}
-    $
+    $y = 10^{\frac{z-1}{254}\cdot[log_{10}(y_{max})-log_{10}(y_{min})]+log_{10}(y_{min})}$
 
     is included in the scripts described in the next section. $y$ is the converted volume in $m^3$, $z$ is the volume retrieved from RECON, $y_{max}\approx 122079329\ m^3$ is the maximum volume in $m^3$ contained in RECON and $y_{min}=10^{-3}\ m^3$ is the minimum threshold we chose to considering a moisture volume.
 
 ---
 
-## Contents  
+## Repository contents
 
-### Codes  
+### Scripts  
 
 1. **Rec_precipitation_footprint.py**  
    - This script retrieves and plots the reconciled moisture flow of precipitation from evaporation (target to source) based on the RECON NetCDF data.  

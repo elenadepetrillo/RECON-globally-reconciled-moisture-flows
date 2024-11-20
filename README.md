@@ -2,13 +2,12 @@
 
 This repository provides a usage tutorial for the **RECON dataset**, a global atmospheric moisture connections NetCDF dataset. The RECON dataset is a post-processed version of the Lagrangian (forward trajectory-based) tracking model **UTrack** dataset (DOI UTrack dataset: [10.1594/PANGAEA.912710](https://doi.pangaea.de/10.1594/PANGAEA.912710), DOI UTrack support paper: [10.5194/essd-12-3177-2020](https://doi.org/10.5194/essd-12-3177-2020)).
 
-The RECON dataset is available at () along with a data download and treatment guide. This repository provides basic Python scripts to retrieve moisture flow volumes from sources of evaporation to targets of precipitation.  
-
 ---
 
 ## Data Overview  
 
 The **RECON dataset** provides moisture flow volumes, in cubic meters, from evaporation sources to precipitation targets and vice versa. It offers global coverage at a resolution of 0.5° for an average year based on the period **2008–2017**.
+The RECON dataset is available at [10.5281/zenodo.14191920](https://doi.org/10.5281/zenodo.14191920) in a compressed .7z format, along with a data download and treatment guide. Instead, this repository provides basic Python scripts to retrieve moisture flow volumes from sources of evaporation to targets of precipitation.  
 
 ---
 
@@ -75,11 +74,7 @@ The **RECON dataset** provides moisture flow volumes, in cubic meters, from evap
    - This reconciliation was performed using the [Iterative Proportional Fitting (IPF)](https://en.wikipedia.org/wiki/Iterative_proportional_fitting) method to ensure consistency.  
 4. **Data conversion**:
    - To ensure continuity with the Utrack dataset data format and reduce the RECON dataset weight, we converted the moisture volumes in integer [] using the following formula
-   $$
-    z = \begin{cases} 
-    0 & \text{if } y \leq y_{\min} \\
-    \text{$z = rint(1+ \frac{log_{10}(y)-log_{10}(y_{min})}{log_{10}(y_{max})-log_{10}(y_{min})} \cdot 254)$} & \text{if } y > y_{\min}
-    \end{cases}
-   $$
+   
+   $z = \begin{cases} 0 & \text{if } y \leq y_{\min} \\ \text{$z = rint(1+ \frac{log_{10}(y)-log_{10}(y_{min})}{log_{10}(y_{max})-log_{10}(y_{min})} \cdot 254)$} & text{if } y > y_{\min}\end{cases}$
 
    where $z$ is the RECON integer converted volume, $y$ is the initial volume in $m^3$, $y_{max}\approx 122079329\ m^3$ is the maximum volume in $m^3$ contained in RECON and $y_{min}=10^{-3}\ m^3$ is the minimum threshold we chose to considering a moisture volume.

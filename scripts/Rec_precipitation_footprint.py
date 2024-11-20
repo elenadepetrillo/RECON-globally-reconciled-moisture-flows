@@ -19,7 +19,7 @@ ymin = 10**-3  # Minimum moisture flow value
 dataset = xr.open_dataset(input_file)
 
 # Example usage with specific latitude and longitude values of the target cell
-# i.e. Fix a precipitation point coordinates, get where that point-wise moisture evapotranspirates from globally
+# i.e. Set a precipitation point coordinates, get where that point-wise moisture evapotranspirates from globally
 # Modify these coordinates to analyze different points.
 lon = 7.7
 lat = 45.1

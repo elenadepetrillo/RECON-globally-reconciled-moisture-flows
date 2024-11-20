@@ -21,6 +21,7 @@ The **RECON dataset** provides moisture flow volumes, in cubic meters, from evap
 - To retrieve **precipitation sheds** from an evapotranspiration point, users must specify the **source coordinates**. Conversely, to retrieve **evapotranspiration sheds** that contributed to precipitation at a given point, users must specify the **target coordinates**.
 
 - **Data Format**: Moisture flow volumes in the dataset are stored as integers `[0, 255]` and must be converted to cubic meters.  The data conversion formula
+    
     $$
     y = 10^{\frac{z-1}{254}\cdot[log_{10}(y_{max})-log_{10}(y_{min})]+log_{10}(y_{min})}
     $$

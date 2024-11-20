@@ -75,6 +75,6 @@ The RECON dataset is available at [10.5281/zenodo.14191920](https://doi.org/10.5
 4. **Data conversion**:
    - To ensure continuity with the Utrack dataset data format and reduce the RECON dataset weight, we converted the moisture volumes in integer [] using the following formula
    
-   $z = \begin{cases} 0 & \text{if } y \leq y_{\min} \\ \text{$z = rint(1+ \frac{log_{10}(y)-log_{10}(y_{min})}{log_{10}(y_{max})-log_{10}(y_{min})} \cdot 254)$} & text{if } y > y_{\min}\end{cases}$
+   ![Integer conversion formula](scripts/zfromy.png)
 
-   where $z$ is the RECON integer converted volume, $y$ is the initial volume in $m^3$, $y_{max}\approx 122079329\ m^3$ is the maximum volume in $m^3$ contained in RECON and $y_{min}=10^{-3}\ m^3$ is the minimum threshold we chose to considering a moisture volume.
+   where $z$ is the RECON integer converted volume, $rint$ is the nearest integer convertion function, $y$ is the initial volume in $m^3$, $y_{max}\approx 122079329\ m^3$ is the maximum volume in $m^3$ contained in RECON and $y_{min}=10^{-3}\ m^3$ is the minimum threshold we chose to considering a moisture volume.

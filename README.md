@@ -72,6 +72,8 @@ The RECON dataset is available at [10.5281/zenodo.14191920](https://doi.org/10.5
 3. **Reconciliation**:  
    - The yearly averaged moisture flows were reconciled with our processed version of ERA5 yearly average data.  
    - This reconciliation was performed using the Iterative Proportional Fitting (IPF) method to ensure consistency.  
+   Here follows an animated gif showing the IPF correction coefficient at every iteration at global scale
+   ![IPF correction coefficients by iteration](images/IPF_1sec.gif)
 4. **Data conversion**:
    To ensure continuity with the Utrack dataset data format and reduce the RECON dataset weight, we converted the moisture volumes into integer values `[0, 255]` using the following formula
    

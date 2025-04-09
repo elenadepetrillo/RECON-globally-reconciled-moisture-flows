@@ -19,7 +19,8 @@ ymin = 10**-3  # Minimum moisture flow value
 dataset = xr.open_dataset(input_file)
 
 # Example usage with specific latitude and longitude values of the sink (location of precipitation)
-# Set a location of precipitation (point coordinates) and get its precipitation shed, i.e., the evaporation flows contributing to precipitation.
+# Set a location of precipitation (point coordinates) and get its precipitation shed, i.e., the evaporation flows in upwind cells (sources) contributing to it annual precipitation.
+
 # Modify these coordinates to analyze different points.
 lon = 7.7
 lat = 45.1
@@ -39,7 +40,7 @@ lons = np.arange(0, 360, 0.5)
 plt.figure(figsize=(10, 6))
 plt.imshow(precipitation_shed, extent=[lons.min(), lons.max(), lats.min(), lats.max()])
 plt.colorbar(label="moisture flow [m$^3$]")
-plt.title(f"Precipitation shed for location (Lat: {lat}, Lon: {lon})")
+plt.title(f"Annual evaporation contributing to precipitation at (Lat: {lat}, Lon: {lon})")
 plt.xlabel("Longitude")
 plt.ylabel("Latitude")
 plt.show()

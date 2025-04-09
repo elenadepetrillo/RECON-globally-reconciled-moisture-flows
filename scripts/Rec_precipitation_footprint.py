@@ -1,7 +1,7 @@
 # Created by Elena De Petrillo (elena.depetrillo@polito.it) & Luca Monaco (luca.monaco@polito.it)
 
-# Script to retrieve and plot the reconciled moisture flow of precipitation from evaporation 
-# from target to source based on NetCDF moisture flow data (RECON).  
+# Script to retrieve and plot the reconciled moisture flow of precipitation at the sink from evaporation 
+# at the source based on NetCDF moisture flow data (RECON).  
 
 # Required Libraries
 import numpy as np
@@ -18,28 +18,28 @@ ymin = 10**-3  # Minimum moisture flow value
 # Load dataset
 dataset = xr.open_dataset(input_file)
 
-# Example usage with specific latitude and longitude values of the target cell
-# i.e. Set a precipitation point coordinates, get where that point-wise moisture evapotranspirates from globally
+# Example usage with specific latitude and longitude values of the sink (location of precipitation)
+# Set a location of precipitation (point coordinates) and get its precipitation shed, i.e., the evaporation flows contributing to precipitation.
 # Modify these coordinates to analyze different points.
 lon = 7.7
 lat = 45.1
 
-# Get precipitation field, which must be converted to m**3
-evapotranspiration_sheds = dataset["moisture_flow"].sel(targetlat=lat, targetlon=lon,method="nearest").values
-# Convert to m**3
-evapotranspiration_sheds = np.where(
-        evapotranspiration_sheds== 0,
+# Get the precipitation shed, which need to be converted in cubic meters
+presipitation_shed = dataset["moisture_flow"].sel(sinklat=lat, sinklon=lon,method="nearest").values
+# Convert to cubic meters
+precipitation_shed = np.where(
+        precipitation_shed== 0,
         0,
-        10**(((evapotranspiration_sheds- 1) / 254) * (np.log10(ymax) - np.log10(ymin)) + np.log10(ymin))
+        10**(((precipitation_shed- 1) / 254) * (np.log10(ymax) - np.log10(ymin)) + np.log10(ymin))
     )
 
 # Optional: Plotting results (customize as needed)
 lats = np.arange(90, -90, -0.5)
 lons = np.arange(0, 360, 0.5)
 plt.figure(figsize=(10, 6))
-plt.imshow(evapotranspiration_sheds, extent=[lons.min(), lons.max(), lats.min(), lats.max()])
-plt.colorbar(label="Moisture Flow Volume [m$^3$]")
-plt.title(f"Evapotranspiration to location (Lat: {lat}, Lon: {lon})")
+plt.imshow(precipitation_shed, extent=[lons.min(), lons.max(), lats.min(), lats.max()])
+plt.colorbar(label="moisture flow [m$^3$]")
+plt.title(f"Precipitation shed for location (Lat: {lat}, Lon: {lon})")
 plt.xlabel("Longitude")
 plt.ylabel("Latitude")
 plt.show()

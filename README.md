@@ -17,7 +17,7 @@ The RECON dataset is available at [10.5281/zenodo.14191920](https://doi.org/10.5
   - **Latitudes (lats)** are in the range `[90, -90]`.  
   - **Longitudes (lons)** are in the range `[0, 360]`.
 
-- To retrieve **precipitation sheds** from an evapotranspiration point, users must specify the **source coordinates**. Conversely, to retrieve **evapotranspiration sheds** that contributed to precipitation at a given point, users must specify the **target coordinates**.
+- To retrieve **evaporation sheds** (downwind region receiving precipitation) from an evapotranspiration point, users must specify the **source coordinates**. Conversely, to retrieve **precipitation sheds** (upwind region contributing to precipitation), users must specify the **target coordinates**.
 
 - **Data Format**: Moisture flow volumes in the dataset are stored as integers `[0, 255]` and must be converted to cubic meters.  The data conversion formula
     
@@ -31,11 +31,11 @@ The RECON dataset is available at [10.5281/zenodo.14191920](https://doi.org/10.5
 
 ### Scripts  
 
-1. **Rec_precipitation_footprint.py**  
-   - This script retrieves and plots the reconciled moisture flow of precipitation from evaporation (target to source) based on the RECON NetCDF data.  
+1. **Rec_precipitation_shed.py**  
+   - This script retrieves and plots the reconciled moisture flows contributing to precipitation at the sink of interest from upwind evaporation sources based on the RECON NetCDF data.  
 
-2. **Rec_evaporation_footprint.py**  
-   - This script retrieves and plots the reconciled moisture flow of evaporation to precipitation (source to target) based on the RECON NetCDF data.  
+2. **Rec_evaporation_shed.py**  
+   - This script retrieves and plots the reconciled moisture flows originating precipitation in a downwind area from the source of interest based on the RECON NetCDF data.  
 
 ### Requirements  
 

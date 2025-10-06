@@ -21,12 +21,12 @@ dataset = xr.open_dataset(input_file)
 # Example usage with specific latitude and longitude values of the sink (location of precipitation)
 # Set a location of precipitation (point coordinates) and get its precipitation shed, i.e., the evaporation flows in upwind cells (sources) contributing to it annual precipitation.
 
-# Modify these coordinates to analyze different points.
-lon = 7.7
+# Modify these coordinates to analyze different points, if longitude is negative in the (-180,180) system, call 360 - |lon|
+lon = 7.7 #if the desired lon is negative in the coordinate system (-180,180), call 180-abs(lon)
 lat = 45.1
 
-# Get the precipitation shed, which need to be converted in cubic meters
-presipitation_shed = dataset["moisture_flow"].sel(sinklat=lat, sinklon=lon,method="nearest").values
+# Get the precipitation shed, which needs to be converted in cubic meters
+precipitation_shed = dataset["moisture_flow"].sel(sinklat=lat, sinklon=lon,method="nearest").values
 # Convert to cubic meters
 precipitation_shed = np.where(
         precipitation_shed== 0,
@@ -44,3 +44,4 @@ plt.title(f"Annual evaporation contributing to precipitation at location (Lat: {
 plt.xlabel("Longitude")
 plt.ylabel("Latitude")
 plt.show()
+

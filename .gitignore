@@ -1,0 +1,7 @@
+# temporary files
+.idea/
+**/.ipynb_checkpoints/
+
+# datasets
+**/*.nc
+

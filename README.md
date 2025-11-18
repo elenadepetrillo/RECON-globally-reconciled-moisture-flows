@@ -29,32 +29,35 @@ The RECON dataset is available at [10.5281/zenodo.14191920](https://doi.org/10.5
 
 ## Repository contents
 
-### Scripts  
-
-1. **Rec_precipitation_shed.py**  
-   - This script retrieves and plots the reconciled moisture flows contributing to precipitation at the sink of interest from upwind evaporation sources based on the RECON NetCDF data.  
-
-2. **Rec_evaporation_shed.py**  
-   - This script retrieves and plots the reconciled moisture flows originating precipitation in a downwind area from the source of interest based on the RECON NetCDF data.  
-
-### Requirements  
-
-- A **requirements.txt** file is provided to install the necessary dependencies via `pip`.  
-`pip install -r requirements.txt`
-- The dependencies include essential Python libraries needed to run the provided scripts. Versions are specified as used by the authors, but they're not mandatory.
+  - `example_scripts\`:
+    - `Rec_evaporation_shed.ipynb` : This notebook retrieves and plots the reconciled moisture flows originating precipitation in a downwind area from the source of interest based on the RECON NetCDF data.
+    - `Rec_precipitation_shed.ipynb`:  This notebook retrieves and plots the reconciled moisture flows contributing to precipitation at the sink of interest from upwind evaporation sources based on the RECON NetCDF data.
+  - `requirements.txt`: The dependencies include essential Python libraries needed to run the provided scripts. Versions are specified as used by the authors, but they're not mandatory. You can install them with `pip install -r requirements.txt`
 
 ---
 
-## How to Use the Scripts  
+## How to use the notebooks
 
 1. **Set Up the Environment**:  
-   - Ensure you have a Python environment with the required packages as pointed out in the subsection **Requirements**.
+  Ensure you have a Python environment with the required packages as specified in `requirements.txt`.
 
-2. **Run the Scripts**:  
-   - Use the scripts to retrieve and analyze reconciled moisture flows. You can specify either source or target coordinates based on whether you want precipitation or evapotranspiration sheds.  
+2. **Run the notebooks**:  
+  Use the notebooks to retrieve and analyze reconciled moisture flows. You can specify either source or target coordinates based on whether you want precipitation or evapotranspiration sheds.
 
 3. **Visualization**:  
-   - The scripts also generate plots that visualize global moisture flows, focusing on evaporation-to-precipitation or precipitation-to-evaporation pathways.  
+  The notebooks also generate plots that visualize global moisture flows, focusing on evaporation-to-precipitation or precipitation-to-evaporation pathways.
+
+---
+
+## Example of visualizations
+
+### Evaporation shed map
+
+![Evaporation shed map](example_scripts/evaporation_shed_map.png)
+
+### Precipiration shed map
+
+![Precipitation shed map](example_scripts/precipitation_shed_map.png)
 
 ---
 

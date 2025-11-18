@@ -1,12 +1,15 @@
 # RECON Moisture Flows Dataset  
 
-This repository provides a usage tutorial for the **RECON dataset**, a global atmospheric moisture connections NetCDF dataset. The RECON dataset is a post-processed version of the Lagrangian (forward trajectory-based) tracking model **UTrack** dataset (DOI UTrack dataset: [10.1594/PANGAEA.912710](https://doi.pangaea.de/10.1594/PANGAEA.912710), DOI UTrack support paper: [10.5194/essd-12-3177-2020](https://doi.org/10.5194/essd-12-3177-2020)).
 
 Dataset:  [10.5281/zenodo.14191919](https://doi.org/10.5281/zenodo.14191919)
 
 How to cite: [De Petrillo, E., Monaco, L., Tuninetti, M., Staal, A., & Laio, F. (2025). Cell-scale atmospheric moisture flows dataset reconciled with ERA5 reanalysis. Scientific data, 12(1), 629.](https://doi.org/10.1038/s41597-025-04964-3)
 
 ---
+
+This repository provides a usage tutorial for the **RECON dataset**, a global atmospheric moisture connections NetCDF dataset. The RECON dataset is a post-processed version of the Lagrangian (forward trajectory-based) tracking model **UTrack** dataset (DOI UTrack dataset: [10.1594/PANGAEA.912710](https://doi.pangaea.de/10.1594/PANGAEA.912710), DOI UTrack support paper: [10.5194/essd-12-3177-2020](https://doi.org/10.5194/essd-12-3177-2020)).
+
+
 
 ## Data Overview  
 
